@@ -116,6 +116,13 @@ nav{display:flex;justify-content:space-between;align-items:center;}
 .history .container{ display:grid;gap:48px;grid-template-columns:1fr;align-items:center; }
 @media(min-width:900px){.history .container{grid-template-columns:0.9fr 1.1fr;}}
 .history-visual{ aspect-ratio:4/5; background:linear-gradient(160deg, rgba(46,125,140,0.4), rgba(13,31,22,0.8)), url('fotos/web/gopr3411.jpg') center/cover no-repeat; position:relative;overflow:hidden; }
+.history-slide{ position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease; }
+.history-slide.on{ opacity:1; }
+.history-visual::after{ content:"";position:absolute;inset:0;background:linear-gradient(160deg, rgba(46,125,140,0.25), rgba(13,31,22,0.55));pointer-events:none; }
+.history-visual svg{ z-index:1; }
+.history-dots{ position:absolute;left:0;right:0;bottom:16px;display:flex;justify-content:center;gap:8px;z-index:2; }
+.history-dots button{ width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,0.45);cursor:pointer; }
+.history-dots button.on{ background:var(--amber-500); }
 .history h2{color:var(--white);font-size:clamp(1.9rem,4vw,2.6rem);margin-top:10px;}
 .history p{margin-top:16px;color:var(--stone-200);opacity:0.9;}
 .history-year{font-family:var(--mono);font-size:5rem;color:var(--amber-500);opacity:0.9;line-height:1;}
@@ -383,6 +390,11 @@ footer p, footer a{font-size:0.9rem;opacity:0.85;} footer ul{list-style:none;} f
 <section class="history" id="historia">
 <div class="container">
 <div class="history-visual" data-reveal>
+<div class="history-slide on" style="background-image:url('fotos/web/historia-1.webp')"></div>
+<div class="history-slide" style="background-image:url('fotos/web/historia-2.webp')"></div>
+<div class="history-slide" style="background-image:url('fotos/web/historia-3.webp')"></div>
+<div class="history-slide" style="background-image:url('fotos/web/historia-4.webp')"></div>
+<div class="history-dots"><button class="on" aria-label="Foto 1"></button><button aria-label="Foto 2"></button><button aria-label="Foto 3"></button><button aria-label="Foto 4"></button></div>
 <svg viewBox="0 0 400 500" style="position:absolute;inset:0;width:100%;height:100%;">
 <path d="M0,120 C90,180 40,260 140,300 C240,340 180,420 260,500" stroke="#f0bd5f" stroke-width="2" fill="none" opacity="0.5"/>
 <path d="M-20,60 C70,140 20,220 120,260" stroke="#7fc4cf" stroke-width="1.5" fill="none" opacity="0.4"/>
@@ -678,6 +690,17 @@ io.unobserve(entry.target);
 });
 }, { threshold: 0.15 });
 revealEls.forEach(el => io.observe(el));
+</script>
+<script>
+(function(){
+  var slides=document.querySelectorAll('.history-slide'), dots=document.querySelectorAll('.history-dots button'), i=0, t;
+  if(!slides.length) return;
+  function show(n){ slides[i].classList.remove('on'); dots[i].classList.remove('on'); i=n; slides[i].classList.add('on'); dots[i].classList.add('on'); }
+  function next(){ show((i+1)%slides.length); }
+  function start(){ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; clearInterval(t); t=setInterval(next,4500); }
+  dots.forEach(function(d,n){ d.addEventListener('click',function(){ show(n); start(); }); });
+  start();
+})();
 </script>
 </body>
 </html>
