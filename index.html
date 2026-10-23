@@ -120,13 +120,6 @@ nav{display:flex;justify-content:space-between;align-items:center;}
 .history p{margin-top:16px;color:var(--stone-200);opacity:0.9;}
 .history-year{font-family:var(--mono);font-size:5rem;color:var(--amber-500);opacity:0.9;line-height:1;}
 /* SAFETY */
-.safety-grid{display:grid;gap:24px;grid-template-columns:1fr;}
-@media(min-width:720px){.safety-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
-.safety-item{border-top:2px solid var(--forest-600);padding-top:16px;}
-.safety-logos{aspect-ratio:16/10;margin-bottom:18px;background:var(--white);border:1px solid var(--stone-200);display:grid;grid-template-columns:repeat(3,1fr);align-items:center;gap:14px;padding:18px;}
-.safety-logos a{display:flex;align-items:center;justify-content:center;height:100%;transition:transform .2s ease;}
-.safety-logos a:hover{transform:scale(1.06);}
-.safety-logos img{max-height:110px;width:auto;max-width:100%;object-fit:contain;}
 .trust-strip{display:grid;gap:24px;grid-template-columns:1fr;margin-top:48px;}
 @media(min-width:720px){.trust-strip{grid-template-columns:repeat(2,1fr);}}
 .trust-item{display:flex;align-items:center;gap:22px;background:var(--white);border:1px solid var(--stone-200);padding:20px 24px;transition:transform .2s ease;}
@@ -135,10 +128,75 @@ nav{display:flex;justify-content:space-between;align-items:center;}
 .trust-item .eyebrow{display:block;margin-bottom:4px;}
 .trust-item strong{display:block;font-weight:600;color:var(--forest-950);}
 .trust-item span.txt{font-size:0.88rem;opacity:0.8;}
-.safety-photo{aspect-ratio:16/10;overflow:hidden;margin-bottom:18px;}
+/* SAFETY v2 */
+.safety-lead{max-width:640px;}
+.safety-grid{display:grid;gap:24px;grid-template-columns:1fr;}
+@media(min-width:720px){.safety-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+.safety-item{background:var(--white);border:1px solid var(--stone-200);border-top:3px solid var(--forest-600);display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease;}
+.safety-item:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(13,31,22,0.10);}
+.safety-body{padding:20px 22px 24px;}
+.safety-num{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.12em;color:var(--river-500);display:block;margin-bottom:8px;}
+.safety-logos{aspect-ratio:16/10;background:var(--white);border-bottom:1px solid var(--stone-200);display:grid;grid-template-columns:repeat(3,1fr);align-items:center;gap:14px;padding:18px;}
+.safety-logos a{display:flex;align-items:center;justify-content:center;height:100%;transition:transform .2s ease;}
+.safety-logos a:hover{transform:scale(1.06);}
+.safety-logos img{max-height:110px;width:auto;max-width:100%;object-fit:contain;}
+.safety-photo{aspect-ratio:16/10;overflow:hidden;}
 .safety-photo img{width:100%;height:100%;object-fit:cover;}
 .safety-item h3{font-size:1.1rem;color:var(--forest-950);margin-bottom:8px;font-family:var(--body);font-weight:600;}
 .safety-item p{font-size:0.9rem;opacity:0.8;}
+/* painel escuro: equipamento obrigatório + classificação do rio */
+.safety-panel{margin-top:40px;background:var(--forest-800);color:var(--stone-200);display:grid;grid-template-columns:1fr;}
+@media(min-width:900px){.safety-panel{grid-template-columns:1.05fr 0.95fr;}}
+.safety-panel > div{padding:36px 30px;}
+@media(min-width:900px){.safety-panel > div + div{border-left:1px solid rgba(253,250,244,0.12);}}
+@media(max-width:899px){.safety-panel > div + div{border-top:1px solid rgba(253,250,244,0.12);}}
+.safety-panel .eyebrow{color:var(--river-300);}
+.safety-panel h3{font-size:1.6rem;color:var(--white);margin:8px 0 6px;}
+.panel-sub{font-size:0.88rem;opacity:0.8;margin-bottom:22px;}
+.gear-group + .gear-group{margin-top:22px;}
+.gear-group h4{font-family:var(--mono);font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--amber-500);margin-bottom:10px;}
+.gear-list{display:flex;flex-wrap:wrap;gap:8px;list-style:none;}
+.gear-list li{font-size:0.82rem;padding:6px 12px;border:1px solid rgba(253,250,244,0.22);border-radius:999px;color:var(--white);}
+.gear-list li.req{background:var(--amber-500);border-color:var(--amber-500);color:var(--forest-950);font-weight:600;}
+.gear-note{font-size:0.8rem;opacity:0.75;margin-top:10px;}
+.gear-legend{display:flex;align-items:center;gap:8px;font-size:0.78rem;opacity:0.85;margin-top:22px;}
+.gear-legend i{width:12px;height:12px;border-radius:50%;background:var(--amber-500);display:inline-block;}
+.river-scale{list-style:none;display:grid;gap:6px;}
+.river-scale li{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:12px;font-size:0.85rem;}
+.river-scale .cls{font-family:var(--mono);font-weight:600;font-size:0.95rem;text-align:center;padding:7px 0;border-radius:2px;color:var(--forest-950);}
+.river-scale .c1{background:#9fd3b0;} .river-scale .c2{background:#7fc4cf;} .river-scale .c3{background:#f0bd5f;}
+.river-scale .c4{background:#e2873d;} .river-scale .c5{background:#c4553a;color:var(--white);} .river-scale .c6{background:#7a2a22;color:var(--white);}
+.river-scale li.off{opacity:0.55;}
+.river-scale li.off span:last-child{text-decoration:line-through;text-decoration-thickness:1px;}
+.river-tag{display:inline-block;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;margin-left:6px;padding:2px 6px;border:1px solid var(--amber-500);color:var(--amber-500);border-radius:2px;vertical-align:middle;}
+.river-note{font-size:0.8rem;opacity:0.75;margin-top:16px;}
+/* política: compromissos */
+.policy{margin-top:56px;}
+.policy-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:22px;}
+.policy-head h3{font-size:1.6rem;color:var(--forest-950);margin-top:8px;}
+.policy-head p{max-width:46ch;font-size:0.9rem;opacity:0.8;}
+.policy-grid{display:grid;gap:0;grid-template-columns:1fr;border-top:1px solid var(--stone-200);}
+@media(min-width:720px){.policy-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1000px){.policy-grid{grid-template-columns:repeat(3,1fr);}}
+.policy-item{padding:20px 20px 20px 0;border-bottom:1px solid var(--stone-200);display:grid;grid-template-columns:36px 1fr;gap:6px;}
+.policy-item .n{font-family:var(--mono);font-weight:600;color:var(--amber-500);font-size:0.95rem;}
+.policy-item h4{font-family:var(--body);font-weight:600;font-size:0.98rem;color:var(--forest-950);margin-bottom:4px;}
+.policy-item p{font-size:0.85rem;opacity:0.8;}
+.trust-strip{margin-top:40px;}
+/* planejamento + certificação */
+.safety-duo{margin-top:40px;display:grid;gap:24px;grid-template-columns:1fr;}
+@media(min-width:900px){.safety-duo{grid-template-columns:1fr 1fr;}}
+.duo-card{background:var(--white);border:1px solid var(--stone-200);padding:30px 28px;}
+.duo-card h3{font-size:1.5rem;color:var(--forest-950);margin:8px 0 6px;}
+.duo-card > p{font-size:0.88rem;opacity:0.8;}
+.plan-list{list-style:none;margin-top:18px;display:grid;gap:10px;}
+.plan-list li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:0.9rem;align-items:start;}
+.plan-list svg{width:20px;height:20px;color:var(--forest-600);margin-top:1px;}
+.norms{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 18px;}
+.norms span{font-family:var(--mono);font-size:0.74rem;font-weight:600;padding:5px 9px;background:var(--stone-100);border:1px solid var(--stone-200);color:var(--forest-800);}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px;}
+.steps div{border-left:3px solid var(--river-500);padding:4px 0 4px 12px;font-size:0.84rem;}
+.steps strong{display:block;font-family:var(--mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--river-500);margin-bottom:2px;}
 /* CTA FOOTER */
 .cta-band{ background:var(--amber-500); padding:70px 0; text-align:center; }
 .cta-band h2{color:var(--forest-950);font-size:clamp(1.8rem,4vw,2.6rem);}
@@ -326,9 +384,10 @@ footer p, footer a{font-size:0.9rem;opacity:0.85;} footer ul{list-style:none;} f
 </section>
 <section class="section" id="seguranca">
 <div class="container">
-<div class="section-head" data-reveal>
+<div class="section-head safety-lead" data-reveal>
 <span class="eyebrow">Segurança em primeiro lugar</span>
 <h2>Aventura de verdade não abre mão de preparo.</h2>
+<p>Nossa política é de melhoria contínua: condutores e gestores focados na máxima segurança possível, monitoramento constante, decisões simples seguidas de ação imediata e conduta consciente na natureza.</p>
 </div>
 <div class="safety-grid">
 <div class="safety-item" data-reveal>
@@ -337,20 +396,101 @@ footer p, footer a{font-size:0.9rem;opacity:0.85;} footer ul{list-style:none;} f
 <a href="https://canoagem.org.br/" target="_blank" rel="noopener" title="Confederação Brasileira de Canoagem"><img src="fotos/web/logos/cbca.png" alt="CBCa — Confederação Brasileira de Canoagem" loading="lazy"></a>
 <a href="https://www.gov.br/inmetro/pt-br" target="_blank" rel="noopener" title="INMETRO"><img src="fotos/web/logos/inmetro.png" alt="INMETRO" loading="lazy"></a>
 </div>
+<div class="safety-body">
+<span class="safety-num">01</span>
 <h3>Equipamentos certificados</h3>
-<p>Capacetes, coletes e cordas com certificação IRF, CBCa e INMETRO, revisados a cada temporada.</p>
+<p>Rafting e duck seguem especificações IRF, CBCa e INMETRO; técnicas verticais, UIAA. Tudo é lavado, higienizado e revisado após cada atividade.</p>
+</div>
 </div>
 <div class="safety-item" data-reveal>
 <div class="safety-photo"><img src="fotos/web/cards/seg-resgate.webp" alt="Kit de resgate e primeiros socorros" loading="lazy"></div>
-<h3>Kit de resgate e primeiros socorros</h3>
-<p>Toda saída leva kit completo de resgate em corredeiras e primeiros socorros, com guias treinados para usá-lo.</p>
+<div class="safety-body">
+<span class="safety-num">02</span>
+<h3>Kit de resgate e equipe socorrista</h3>
+<p>Toda saída leva kit de primeiros socorros e de resgate especializado. Toda a equipe é formada socorrista (Suporte Básico à Vida, RCP e desfibrilador) com o Rio Emergências.</p>
+</div>
 </div>
 <div class="safety-item" data-reveal>
 <div class="safety-photo"><img src="fotos/web/cards/seg-proporcao.webp" alt="Proporção guia/participante" loading="lazy"></div>
+<div class="safety-body">
+<span class="safety-num">03</span>
 <h3>Proporção guia/participante</h3>
 <p>Cada percurso define um limite claro de participantes por guia — a segurança não é negociável pelo volume do grupo.</p>
 </div>
 </div>
+</div>
+
+<div class="safety-panel" data-reveal>
+<div>
+<span class="eyebrow">O que você vai usar</span>
+<h3>Equipamento de segurança</h3>
+<p class="panel-sub">Adequado ao tamanho e ao volume de água de cada rio.</p>
+<div class="gear-group">
+<h4>Rafting e duck</h4>
+<ul class="gear-list"><li class="req">Capacete</li><li class="req">Colete</li><li class="req">Calçado com sola de borracha</li><li>Remo (também ferramenta de resgate)</li><li>Duck para 2, sempre com condutor</li></ul>
+</div>
+<div class="gear-group">
+<h4>Técnicas verticais</h4>
+<ul class="gear-list"><li class="req">Capacete</li><li class="req">Cadeirinha</li><li class="req">Calçado com sola de borracha</li><li>Cordas com alma</li><li>Mosquetões de aço e alumínio</li><li>Fitas de ancoragem</li><li>Freio 8 ou blocante</li><li>Luvas</li></ul>
+</div>
+<div class="gear-legend"><i></i> Obrigatório para participar</div>
+</div>
+<div>
+<span class="eyebrow">Classificação do rio</span>
+<h3>Seis níveis de corredeira</h3>
+<p class="panel-sub">Definidos pela geologia, declividade, traçado e volume de água. Nossos percursos vão da classe I à IV.</p>
+<ul class="river-scale">
+<li><span class="cls c1">I</span><span>Iniciantes</span></li>
+<li><span class="cls c2">II</span><span>Iniciantes</span></li>
+<li><span class="cls c3">III</span><span>Iniciantes e intermediários</span></li>
+<li><span class="cls c4">IV</span><span>Somente pessoas experientes</span></li>
+<li class="off"><span class="cls c5">V</span><span>Só competição, não turístico</span></li>
+<li class="off"><span class="cls c6">VI</span><span>Não indicado para descida</span></li>
+</ul>
+<p class="river-note">O nível da água no dia pode subir ou baixar a dificuldade. Os sinais (+) e (−) dão precisão: IV(+) fica entre as classes IV e V.</p>
+</div>
+</div>
+
+<div class="safety-duo">
+<div class="duo-card" data-reveal>
+<span class="eyebrow">Antes de sair</span>
+<h3>Como planejamos cada roteiro</h3>
+<p>Condutores com experiência no local, treino prático e teórico no roteiro, primeiros socorros e formação de Condutor de Turismo de Aventura.</p>
+<ul class="plan-list">
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tipo de atividade e conhecimento profundo do local</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Monitoramento das condições do tempo</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Análise prévia do perfil do grupo</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Equipe treinada e qualificada</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Equipamentos revisados e renovados</li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Plano de resgate e emergência</li>
+</ul>
+</div>
+<div class="duo-card" data-reveal>
+<span class="eyebrow">Certificação</span>
+<h3>Normas ABNT e INMETRO</h3>
+<p>Participamos do programa Aventura Segura (Ministério do Turismo, ABETA e SEBRAE) e operamos conforme as normas técnicas de turismo de aventura.</p>
+<div class="norms"><span>NBR 15286</span><span>NBR 15331</span><span>NBR 15370</span><span>NBR 15398</span><span>NBR 15400</span><span>NBR 15505-1</span><span>NBR 15505-2</span></div>
+<div class="steps">
+<div><strong>Antes do passeio</strong>Você recebe as informações e assina o termo de conhecimento de riscos.</div>
+<div><strong>Depois do passeio</strong>Você avalia o serviço no nosso opinário.</div>
+</div>
+</div>
+</div>
+
+<div class="policy">
+<div class="policy-head" data-reveal>
+<div><span class="eyebrow">Política de segurança</span><h3>Nossos compromissos</h3></div>
+</div>
+<div class="policy-grid">
+<div class="policy-item" data-reveal><span class="n">01</span><div><h4>Segurança das pessoas</h4><p>Reduzir riscos à vida e preservar a integridade física e mental de todos.</p></div></div>
+<div class="policy-item" data-reveal><span class="n">02</span><div><h4>Qualidade do serviço</h4><p>Melhoria contínua, com padrão ético, profissional e decisões precisas.</p></div></div>
+<div class="policy-item" data-reveal><span class="n">03</span><div><h4>Conformidade legal</h4><p>Leis ambientais, normas da atividade e defesa do consumidor, com retorno à comunidade local.</p></div></div>
+<div class="policy-item" data-reveal><span class="n">04</span><div><h4>Uso sustentável</h4><p>Recursos naturais usados com responsabilidade e treino técnico para preservar o bioma.</p></div></div>
+<div class="policy-item" data-reveal><span class="n">05</span><div><h4>Monitoramento</h4><p>Acompanhamento contínuo das atividades, com metas para aprimorar a gestão da segurança.</p></div></div>
+<div class="policy-item" data-reveal><span class="n">06</span><div><h4>Regras de visitação</h4><p>Seguimos o regulamento do INEA para a APA Macaé de Cima, com conduta de mínimo impacto.</p></div></div>
+</div>
+</div>
+
 <div class="trust-strip">
 <a class="trust-item" href="https://seguroecotrip.com.br/site/" target="_blank" rel="noopener" data-reveal>
 <img src="fotos/web/logos/ecotrip.png" alt="Eco Trip" loading="lazy">
