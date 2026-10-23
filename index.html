@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta name="robots" content="noindex, nofollow">
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lumiar Aventura — Rafting, Cachoeiras e Trilhas desde 1990</title>
 <meta name="description" content="Rafting, canoagem, rapel, trekking, arvorismo-canopy, cachoeirismo e treinamento empresarial em Lumiar, Nova Friburgo. 35 anos guiando aventuras com segurança na Serra Fluminense.">
@@ -222,6 +222,12 @@ nav{display:flex;justify-content:space-between;align-items:center;}
 .partner-card h3{font-size:1.15rem;color:var(--forest-950);margin-bottom:8px;font-family:var(--body);font-weight:600;}
 .partner-card p{font-size:0.9rem;opacity:0.75;}
 .partner-card.placeholder{border-style:dashed;opacity:0.55;}
+.partner-list{list-style:none;margin:16px 0 0;padding:0;border-top:1px solid var(--stone-200);}
+.partner-list li{display:flex;flex-direction:column;padding:10px 0;border-bottom:1px solid var(--stone-200);font-size:0.9rem;}
+.partner-list li span{font-size:0.8rem;opacity:0.65;}
+.partner-more{margin-top:14px;font-weight:600;opacity:1!important;color:var(--forest-950);}
+.partner-list a{color:inherit;text-decoration:underline;text-underline-offset:3px;}
+
 footer{background:var(--forest-950);color:var(--stone-200);padding:56px 0 28px;}
 .footer-grid{display:grid;gap:32px;grid-template-columns:1fr;margin-bottom:40px;}
 @media(min-width:720px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr;}}
@@ -531,14 +537,30 @@ footer p, footer a{font-size:0.9rem;opacity:0.85;} footer ul{list-style:none;} f
 <p>Hospedagem, restaurantes e passeios recomendados pela nossa equipe — ideal pra fechar o roteiro completo da sua aventura.</p>
 </div>
 <div class="partners-grid">
-<a href="jeep-cachoeiras.html" class="partner-card featured" data-reveal>
-<span class="partner-badge">Parceiro em destaque</span>
-<h3>Amilson — Passeios 4x4</h3>
-<p>Passeio de Jeep pelas cachoeiras da região — parceria recomendada pela nossa equipe para quem quer completar a aventura fora do rio. Ver roteiro completo →</p>
+<a href="pousadas.html" class="partner-card featured" data-reveal>
+<span class="partner-badge">Onde ficar</span>
+<h3>Pousadas parceiras</h3>
+<p>As preferidas da nossa equipe em Lumiar e São Pedro da Serra.</p>
+<ul class="partner-list">
+<li><strong>Pousada Casa Azul</strong><span>Lumiar</span></li>
+<li><strong>Pousada Caminho das Candeias</strong><span>Lumiar</span></li>
+<li><strong>I'Lumiar Loft</strong><span>Lumiar</span></li>
+<li><strong>Hospedagem Country Inn</strong><span>São Pedro da Serra</span></li>
+<li><strong>Pousada Estrela da Manhã</strong><span>São Pedro da Serra</span></li>
+<li><strong>Pousada Canteiros</strong><span>São Pedro da Serra</span></li>
+</ul>
+<p class="partner-more">Ver todas as 40 pousadas →</p>
 </a>
-<div class="partner-card placeholder" data-reveal>
-<h3>Hospedagem parceira</h3>
-<p>A preencher — pousada ou hotel recomendado próximo à base de operações.</p>
+<div class="partner-card" data-reveal>
+<span class="partner-badge">Fora do rio</span>
+<h3>Passeios 4x4 e quadriciclo</h3>
+<p>Para completar o dia com as cachoeiras da região de jipe ou de quadriciclo.</p>
+<ul class="partner-list">
+<li><strong>Aventura Tour</strong><span>jipe e quadriciclo · quiosque no centro, junto ao lago</span></li>
+<li><strong>Lumiar 360 Tour</strong><span>quadriciclo e trilhas off-road</span></li>
+<li><a href="https://www.instagram.com/buggytourlumiar/" target="_blank" rel="noopener"><strong>Buggy Tour Lumiar</strong></a><span>buggy pelas cachoeiras</span></li>
+<li><strong>Serra a Cima Turismo</strong><span>jipe 4x4 · São Pedro da Serra</span></li>
+</ul>
 </div>
 <div class="partner-card placeholder" data-reveal>
 <h3>Restaurante parceiro</h3>
