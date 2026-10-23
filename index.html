@@ -58,6 +58,16 @@ nav{display:flex;justify-content:space-between;align-items:center;}
 .hero h1 em{font-style:normal;color:var(--amber-500);}
 .hero p{ margin-top:22px;max-width:46ch; font-size:1.05rem;color:var(--stone-200); }
 .hero-actions{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;}
+/* CELULAR: o texto do topo nunca passa por baixo da logo */
+@media(max-width:719px){
+.hero{padding-top:92px;padding-bottom:40px;}
+.hero-scroll .hero{height:100vh;height:100svh;}
+.hero-tag{margin-bottom:14px;}
+.hero h1{font-size:clamp(2.1rem, 9.5vw, 2.6rem);}
+.hero p{margin-top:16px;font-size:0.95rem;}
+.hero-actions{margin-top:24px;gap:10px;}
+.hero-actions .btn{padding:12px 20px;}
+}
 /* STATS STRIP */
 .stats{ background:var(--forest-950); border-top:1px solid rgba(253,250,244,0.1); }
 .stats-grid{ display:grid;grid-template-columns:repeat(2,1fr); gap:0; }
