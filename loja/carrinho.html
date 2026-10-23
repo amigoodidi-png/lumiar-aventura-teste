@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho — Loja Lumiar Aventura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="loja.css">
+<script src="loja-demo.js" defer></script>
+</head>
+<body data-page="carrinho">
+<header>
+<div class="container">
+<nav>
+<a class="logo" href="../index.html"><img src="../logo-lumiar-aventura.png" alt="Lumiar Aventura"></a>
+<div class="nav-links">
+<a href="../index.html#atividades">Atividades</a>
+<a href="../precos.html">Preços</a>
+<a href="index.html" class="active">Loja</a>
+<a href="../index.html#contato">Contato</a>
+</div>
+<a class="btn btn-primary cart-btn" href="carrinho.html">Carrinho <span class="cart-count">0</span></a>
+</nav>
+</div>
+</header>
+<div class="page-head compact">
+<div class="container">
+<span class="eyebrow">Seu pedido</span>
+<h1>Carrinho</h1>
+</div>
+</div>
+<div class="notice"><div class="container">Loja em demonstração: nenhum pagamento é feito aqui. O pedido é enviado pelo WhatsApp para a equipe confirmar.</div></div>
+<section class="section">
+<div class="container cart-layout">
+<div id="itens"></div>
+<div class="box">
+<h2>Finalizar pedido</h2>
+<div id="resumo"></div>
+<form id="form-pedido">
+<div class="form-grid">
+<div class="field full"><label for="nome">Nome completo</label><input id="nome" name="nome" required></div>
+<div class="field"><label for="cep">CEP</label><input id="cep" name="cep" inputmode="numeric" required></div>
+<div class="field"><label for="cidade">Cidade / UF</label><input id="cidade" name="cidade" required></div>
+<div class="field full"><label for="observacoes">Observações</label><textarea id="observacoes" name="observacoes" rows="3"></textarea></div>
+</div>
+<button class="btn btn-dark" id="enviar" type="submit" style="width:100%;margin-top:18px">Enviar pedido pelo WhatsApp</button>
+<p class="hint">Ao enviar, abrimos o WhatsApp com o resumo do pedido para a equipe confirmar frete e forma de pagamento.</p>
+</form>
+</div>
+</div>
+</section>
+<div class="cta-band">
+<div class="container">
+<h2>Dúvida sobre tamanho, estampa ou entrega?</h2>
+<p>Fale com a equipe pelo WhatsApp. Cada peça é produzida sob demanda e enviada para todo o Brasil.</p>
+<a class="btn btn-primary" href="https://wa.me/5522981316768" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+</div>
+</div>
+<footer>
+<div class="container">© 1990–2026 LUMIAR AVENTURA — LOJA OFICIAL · PRODUZIDO SOB DEMANDA</div>
+</footer>
+</body>
+</html>
