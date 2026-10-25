@@ -213,6 +213,19 @@ nav{display:flex;justify-content:space-between;align-items:center;}
 .bring-item svg{width:36px;height:36px;color:var(--forest-600);}
 .bring-item h4{font-family:var(--body);font-weight:600;font-size:0.98rem;color:var(--forest-950);margin-bottom:4px;}
 .bring-item p{font-size:0.86rem;opacity:0.85;}
+/* compromissos clicáveis */
+.policy-grid{align-items:start;}
+details.policy-item{display:block;padding:0;}
+.policy-item summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:36px 1fr 22px;gap:6px;padding:20px 16px 20px 0;}
+.policy-item summary::-webkit-details-marker{display:none;}
+.policy-item summary:hover h4{color:var(--forest-600);}
+.pi-plus{position:relative;width:18px;height:18px;margin-top:2px;}
+.pi-plus::before,.pi-plus::after{content:"";position:absolute;left:3px;right:3px;top:8px;height:2px;background:var(--amber-500);transition:transform .25s ease;}
+.pi-plus::after{transform:rotate(90deg);}
+.policy-item[open] .pi-plus::after{transform:rotate(0deg);}
+.policy-item[open] .pi-short{display:none;}
+.policy-item[open]{background:var(--white);}
+.pi-full{font-size:0.88rem;line-height:1.6;padding:0 16px 22px 42px;margin-top:-10px;}
 /* CTA FOOTER */
 .cta-band{ background:var(--amber-500); padding:70px 0; text-align:center; }
 .cta-band h2{color:var(--forest-950);font-size:clamp(1.8rem,4vw,2.6rem);}
@@ -528,12 +541,12 @@ footer p, footer a{font-size:0.9rem;opacity:0.85;} footer ul{list-style:none;} f
 <div><span class="eyebrow">Política de segurança</span><h3>Nossos compromissos</h3></div>
 </div>
 <div class="policy-grid">
-<div class="policy-item" data-reveal><span class="n">01</span><div><h4>Segurança das pessoas</h4><p>Reduzir riscos à vida e preservar a integridade física e mental de todos.</p></div></div>
-<div class="policy-item" data-reveal><span class="n">02</span><div><h4>Qualidade do serviço</h4><p>Melhoria contínua, com padrão ético, profissional e decisões precisas.</p></div></div>
-<div class="policy-item" data-reveal><span class="n">03</span><div><h4>Conformidade legal</h4><p>Leis ambientais, normas da atividade e defesa do consumidor, com retorno à comunidade local.</p></div></div>
-<div class="policy-item" data-reveal><span class="n">04</span><div><h4>Uso sustentável</h4><p>Recursos naturais usados com responsabilidade e treino técnico para preservar o bioma.</p></div></div>
-<div class="policy-item" data-reveal><span class="n">05</span><div><h4>Monitoramento</h4><p>Acompanhamento contínuo das atividades, com metas para aprimorar a gestão da segurança.</p></div></div>
-<div class="policy-item" data-reveal><span class="n">06</span><div><h4>Regras de visitação</h4><p>Seguimos o regulamento do INEA para a APA Macaé de Cima, com conduta de mínimo impacto.</p></div></div>
+<details class="policy-item" data-reveal><summary><span class="n">01</span><span class="pi-t"><h4>Segurança das pessoas</h4><p class="pi-short">Reduzir riscos à vida e preservar a integridade física e mental de todos.</p></span><span class="pi-plus" aria-hidden="true"></span></summary><p class="pi-full">Da minimização dos riscos à vida e da manutenção da integridade física e mental de todos os envolvidos, buscando a excelência dos trabalhos oferecidos.</p></details>
+<details class="policy-item" data-reveal><summary><span class="n">02</span><span class="pi-t"><h4>Qualidade do serviço</h4><p class="pi-short">Melhoria contínua, com padrão ético, profissional e decisões precisas.</p></span><span class="pi-plus" aria-hidden="true"></span></summary><p class="pi-full">Da melhoria contínua dos serviços prestados, aderindo a um padrão ético e profissional, com tomadas de decisões precisas na busca constante do fortalecimento e sucesso do empreendimento.</p></details>
+<details class="policy-item" data-reveal><summary><span class="n">03</span><span class="pi-t"><h4>Conformidade legal</h4><p class="pi-short">Leis ambientais, normas da atividade e defesa do consumidor, com retorno à comunidade local.</p></span><span class="pi-plus" aria-hidden="true"></span></summary><p class="pi-full">Do atendimento às Legislações Ambientais visando à adequação, como também a conformidade com todas as demais normas pertinentes a prática com segurança das atividades de Turismo de Aventura oferecidas, além das legislações de proteção aos consumidores que estarão usufruindo do serviço, além de prestar um serviço a comunidade local, gerando empregos, ministrando palestras e atendendo aos aspectos sociais previstos na norma.</p></details>
+<details class="policy-item" data-reveal><summary><span class="n">04</span><span class="pi-t"><h4>Uso sustentável</h4><p class="pi-short">Recursos naturais usados com responsabilidade e treino técnico para preservar o bioma.</p></span><span class="pi-plus" aria-hidden="true"></span></summary><p class="pi-full">Do uso sustentável dos Bens ambientais visando uma constante atitude com medidas mitigadoras de redução dos impactos que possam advir das atividades oferecidas, com treinamento e conhecimento técnico visando à manutenção e preservação de nosso bioma.</p></details>
+<details class="policy-item" data-reveal><summary><span class="n">05</span><span class="pi-t"><h4>Monitoramento</h4><p class="pi-short">Acompanhamento contínuo das atividades, com metas para aprimorar a gestão da segurança.</p></span><span class="pi-plus" aria-hidden="true"></span></summary><p class="pi-full">Do monitoramento contínuo das atividades minimizando ao máximo os riscos inerentes a prática do Turismo de Aventura, estabelecendo objetivos e metas de uma melhoria consciente comprometida com a gestão da segurança estabelecida.</p></details>
+<details class="policy-item" data-reveal><summary><span class="n">06</span><span class="pi-t"><h4>Regras de visitação</h4><p class="pi-short">Seguimos o regulamento do INEA para a APA Macaé de Cima, com conduta de mínimo impacto.</p></span><span class="pi-plus" aria-hidden="true"></span></summary><p class="pi-full">Do regulamento do INEA para visitação da APAEMC (Área de Proteção Ambiental de Macaé de Cima). Os guias são instruídos a seguirem o código de conduta e mínimo impacto em ambientes naturais e a exigirem o mesmo dos clientes.</p></details>
 </div>
 </div>
 
