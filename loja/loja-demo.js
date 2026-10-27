@@ -1,6 +1,6 @@
 // Loja Lumiar Aventura — versão de demonstração estática (GitHub Pages).
 // Produtos copiados da loja local; carrinho salvo no navegador; o pedido fecha pelo WhatsApp.
-const WHATS = '5522981316768';
+const WHATS = '5522999468812';
 const CATEGORIAS = {
   'camisa-algodao': 'Camisas de Algodão',
   'camisa-lycra': 'Camisas DryFit e Malha Fria',
@@ -8,25 +8,23 @@ const CATEGORIAS = {
   'lembrancinha': 'Lembrancinhas'
 };
 const PRODUTOS = [
-  { id: 10, cat: 'camisa-lycra', nome: 'Camisa DryFit Secagem Rápida', preco: 99.90, destaque: true,
-    desc: 'Camiseta DryFit em poliéster, leve e de secagem rápida, com a arte "Lumiar — as aventuras não se assistem, se vivem!". Ideal para rafting, trilha e cachoeira.',
-    fotos: [['dryfit-secagem-rapida-frente.webp', 'Frente']],
-    tamanhos: ['P', 'M', 'G'], cores: ['Branco', 'Preto', 'Azul-marinho'] },
-  { id: 11, cat: 'camisa-lycra', nome: 'Camisa Manga Longa Aventura se Vive', preco: 129.90, destaque: true,
-    desc: 'Camiseta unissex manga longa em malha fria, com estampa Lumiar na frente e nas costas. Protege do sol nas atividades ao ar livre.',
-    fotos: [['manga-longa-aventura-frente.webp', 'Frente'], ['manga-longa-aventura-costas.webp', 'Costas']],
-    tamanhos: ['P', 'M', 'G'], cores: ['Azul-celeste', 'Branco', 'Preto', 'Azul-royal', 'Verde-musgo', 'Verde-bandeira'] },
-  { id: 12, cat: 'caneca', nome: 'Caneca Aventura', preco: 54.90, destaque: true,
-    desc: 'Caneca de porcelana com a arte do rafting em Lumiar e o logo da Lumiar Aventura, estampada por sublimação.',
-    fotos: [['caneca-aventura.webp', 'Frente']], tamanhos: [], cores: ['Branco', 'Preto'] },
-  { id: 13, cat: 'caneca', nome: 'Caneca Lumiar — Curtir e Amar', preco: 54.90, destaque: true,
-    desc: 'Caneca de porcelana com a paisagem da Serra de Lumiar e a frase "Curtir e amar", estampada por sublimação.',
-    fotos: [['caneca-lumiar.webp', 'Frente']], tamanhos: [], cores: ['Branco', 'Preto'] }
+  {"id":10,"cat":"camisa-lycra","nome":"Camisa DryFit Secagem Rápida","preco":73.99,"destaque":true,"lado":"frente","desc":"Camiseta DryFit em poliéster, leve e de secagem rápida, com a arte \"Lumiar — as aventuras não se assistem, se vivem!\". Ideal para rafting, trilha e cachoeira.","fotos":[["dryfit-secagem-rapida-preta.webp","Principal"]],"tamanhos":["P","M","G"],"cores":["Preto","Azul-marinho"]},
+  {"id":11,"cat":"camisa-lycra","nome":"Camisa Manga Longa Aventura se Vive","preco":121.48,"destaque":true,"lado":"","desc":"Camiseta unissex manga longa em malha fria, com estampa Lumiar na frente e nas costas. Protege do sol nas atividades ao ar livre.","fotos":[["manga-longa-aventura-frente.webp","Principal"],["manga-longa-aventura-costas.webp","Outro lado"]],"tamanhos":["P","M","G"],"cores":["Azul-celeste","Branco","Preto","Azul-royal","Verde-musgo","Verde-bandeira"]},
+  {"id":12,"cat":"caneca","nome":"Caneca Aventura","preco":52.11,"destaque":true,"lado":"","desc":"Caneca de porcelana com a arte do rafting em Lumiar e o logo da Lumiar Aventura, estampada por sublimação.","fotos":[["caneca-aventura.webp","Principal"]],"tamanhos":[],"cores":["Branco","Preto"]},
+  {"id":13,"cat":"caneca","nome":"Caneca Lumiar — Curtir e Amar","preco":52.11,"destaque":true,"lado":"","desc":"Caneca de porcelana com a paisagem da Serra de Lumiar e a frase \"Curtir e amar\", estampada por sublimação.","fotos":[["caneca-lumiar.webp","Principal"]],"tamanhos":[],"cores":["Branco","Preto"]},
+  {"id":14,"cat":"camisa-lycra","nome":"Camisa DryFit Remar é Viver","preco":80.89,"destaque":true,"lado":"costas","desc":"Camiseta DryFit em poliéster, leve e de secagem rápida, com a arte nas costas \"Remar é viver\" das corredeiras de Lumiar.","fotos":[["remar-e-viver.webp","Principal"]],"tamanhos":["P","M","G"],"cores":["Branco"]},
+  {"id":15,"cat":"camisa-algodao","nome":"Camisa Aventura que Fica na Memória","preco":80.78,"destaque":true,"lado":"frente","desc":"Camiseta unissex de algodão cardado com a arte \"Aventura que fica na memória\" do rafting em Lumiar.","fotos":[["aventura-memoria.webp","Principal"]],"tamanhos":["P","M","G"],"cores":["Branco","Cinza"]},
+  {"id":16,"cat":"camisa-algodao","nome":"Camisa Eu Pratiquei","preco":93.47,"destaque":true,"lado":"","desc":"Camiseta unissex de algodão penteado fio 30.1. Nas costas, a arte \"Eu pratiquei\" do rafting em Lumiar; na frente, os remos cruzados.","fotos":[["eu-pratiquei-b.webp","Principal"],["eu-pratiquei-a.webp","Outro lado"]],"tamanhos":["P","M","G"],"cores":["Branco","Off-white","Cinza","Verde-oliva"]},
+  {"id":17,"cat":"camisa-algodao","nome":"Camisa Eu Remei e Curti","preco":93.47,"destaque":true,"lado":"","desc":"Camiseta unissex de algodão penteado fio 30.1. Nas costas, a arte \"Eu remei e curti!\" com remos e corredeiras; na frente, os remos cruzados.","fotos":[["remei-e-curti-b.webp","Principal"],["remei-e-curti-a.webp","Outro lado"]],"tamanhos":["P","M","G"],"cores":["Branco","Off-white","Cinza","Verde-oliva"]},
+  {"id":18,"cat":"camisa-lycra","nome":"Camisa DryFit Eu Encarei","preco":80.89,"destaque":true,"lado":"frente","desc":"Camiseta DryFit em poliéster, leve e de secagem rápida, com a arte \"Eu encarei, eu remei, eu sobrevivi!\" do rafting em Lumiar.","fotos":[["eu-encarei.webp","Principal"]],"tamanhos":["P","M","G"],"cores":["Branco"]}
 ];
 
 const brl = v => 'R$ ' + v.toFixed(2).replace('.', ',');
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const foto = f => 'uploads/' + f;
+// Selo para camisas com estampa de um lado só.
+const seloLado = (p, naPagina) => !p.lado ? '' :
+  `<span class="selo-lado${naPagina ? ' inline' : ''}">Estampa ${naPagina ? 'só ' : ''}${p.lado === 'costas' ? 'nas costas' : 'na frente'}</span>`;
 
 function lerCarrinho() { try { return JSON.parse(localStorage.getItem('lumiar-carrinho')) || []; } catch (e) { return []; } }
 function salvarCarrinho(c) { try { localStorage.setItem('lumiar-carrinho', JSON.stringify(c)); } catch (e) {} atualizarContador(); }
@@ -53,10 +51,27 @@ function paginaLista() {
     grade.innerHTML = lista.length ? lista.map(p => `
       <a class="product-card" href="produto.html?id=${p.id}">
         ${p.destaque ? '<span class="badge">Destaque</span>' : ''}
-        <img src="${foto(p.fotos[0][0])}" alt="${esc(p.nome)}" loading="lazy">
+        ${seloLado(p, false)}
+        ${p.fotos.length > 1 ? `<div class="card-fotos">
+          <img src="${foto(p.fotos[0][0])}" alt="${esc(p.nome)}" loading="lazy">
+          <img class="foto-2" src="${foto(p.fotos[1][0])}" alt="${esc(p.nome)}, outro lado" loading="lazy">
+          <span class="card-dots"><span class="dot" role="button" tabindex="0" aria-label="Ver foto principal"></span><span class="dot" role="button" tabindex="0" aria-label="Ver outro lado"></span></span>
+        </div>` : `<img src="${foto(p.fotos[0][0])}" alt="${esc(p.nome)}" loading="lazy">`}
         <div class="info"><span class="tag">${CATEGORIAS[p.cat]}</span><h3>${esc(p.nome)}</h3><span class="price">${brl(p.preco)}</span></div>
       </a>`).join('') : '<div class="empty">Nenhum produto nesta categoria por enquanto.</div>';
   }
+  // Bolinhas dos cards com frente e costas: o toque troca a foto sem abrir o produto.
+  grade.addEventListener('click', e => {
+    const dot = e.target.closest('.card-dots .dot'); if (!dot) return;
+    e.preventDefault(); e.stopPropagation();
+    const box = dot.closest('.card-fotos');
+    box.classList.toggle('outro-lado', dot === box.querySelectorAll('.dot')[1]);
+    box.classList.add('fixo');
+  });
+  grade.addEventListener('mouseout', e => {
+    const card = e.target.closest('.product-card');
+    if (card && !card.contains(e.relatedTarget)) card.querySelector('.card-fotos')?.classList.remove('fixo', 'outro-lado');
+  });
   filtros.addEventListener('click', e => {
     const a = e.target.closest('a[data-cat]'); if (!a) return;
     atual = a.dataset.cat; render();
@@ -81,7 +96,7 @@ function paginaProduto() {
       ${p.fotos.length > 1 ? `<div class="thumbs">${p.fotos.map((f, i) => `<button type="button" data-src="${foto(f[0])}" class="${i === 0 ? 'active' : ''}"><img src="${foto(f[0])}" alt=""><span>${f[1]}</span></button>`).join('')}</div>` : ''}
     </div>
     <div>
-      <span class="eyebrow">${CATEGORIAS[p.cat]}</span>
+      <span class="eyebrow">${CATEGORIAS[p.cat]}</span>${seloLado(p, true)}
       <h1>${esc(p.nome)}</h1>
       <div class="price">${brl(p.preco)}</div>
       <p class="desc">${esc(p.desc)}</p>
